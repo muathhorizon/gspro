@@ -1,0 +1,442 @@
+.introjs-overlay {
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  z-index: 999998 !important;
+}
+
+.introjs-helperLayer {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: 2px solid var(--accent-color) !important;
+  box-shadow:
+    0 0 0 9999px rgba(0, 0, 0, 0.85),
+    0 0 30px var(--primary-glow) !important;
+  border-radius: 16px !important;
+  z-index: 999999 !important;
+}
+
+.introjs-tooltipReferenceLayer {
+  z-index: 1000000 !important;
+}
+
+.introjs-tooltip {
+  background: linear-gradient(135deg, var(--card-bg), rgba(20, 20, 20, 0.98)) !important;
+  border: 2px solid var(--accent-color) !important;
+  border-radius: 20px !important;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 40px var(--primary-glow) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  max-width: 450px !important;
+  min-width: 300px !important;
+  padding: 0 !important;
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+.introjs-tooltip .intro-custom {
+  padding: 2rem !important;
+}
+
+.introjs-tooltip .intro-custom h3 {
+  font-size: 1.75rem !important;
+  font-weight: 800 !important;
+  background: linear-gradient(135deg, var(--accent-color), var(--secondary-color)) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  margin: 0 0 1rem 0 !important;
+  text-align: right !important;
+}
+
+.introjs-tooltip .intro-custom p {
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+  line-height: 1.7 !important;
+  margin: 0 !important;
+  text-align: right !important;
+}
+
+.introjs-tooltipbuttons {
+  padding: 0 2rem 2rem !important;
+  display: flex !important;
+  gap: 0.75rem !important;
+  justify-content: flex-end !important;
+  border-top: none !important;
+}
+
+.introjs-button {
+  padding: 0.875rem 2rem !important;
+  border: none !important;
+  border-radius: 14px !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  text-shadow: none !important;
+  font-family: inherit !important;
+}
+
+.introjs-button:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1) !important;
+}
+
+.introjs-skipbutton {
+  background: transparent !important;
+  border: 2px solid var(--border-color) !important;
+  color: var(--text-secondary) !important;
+  margin-left: auto !important;
+}
+
+.introjs-skipbutton:hover {
+  border-color: var(--accent-color) !important;
+  color: var(--accent-color) !important;
+  transform: translateY(-2px) !important;
+  background: transparent !important;
+}
+
+.introjs-prevbutton {
+  background: transparent !important;
+  border: 2px solid var(--border-color) !important;
+  color: var(--text-secondary) !important;
+}
+
+.introjs-prevbutton:hover {
+  border-color: var(--accent-color) !important;
+  color: var(--accent-color) !important;
+  transform: translateY(-2px) !important;
+  background: transparent !important;
+}
+
+.introjs-nextbutton,
+.introjs-donebutton {
+  background: linear-gradient(135deg, var(--accent-color), var(--secondary-color)) !important;
+  color: white !important;
+  box-shadow: 0 4px 16px var(--primary-glow) !important;
+  border: none !important;
+}
+
+.introjs-nextbutton:hover,
+.introjs-donebutton:hover {
+  transform: translateY(-3px) scale(1.05) !important;
+  box-shadow: 0 8px 24px var(--primary-glow) !important;
+}
+
+.introjs-nextbutton:active,
+.introjs-donebutton:active {
+  transform: translateY(0) scale(0.98) !important;
+}
+
+.introjs-bullets {
+  padding: 0 2rem 1rem !important;
+  text-align: center !important;
+}
+
+.introjs-bullets ul {
+  display: flex !important;
+  gap: 0.5rem !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.introjs-bullets ul li {
+  list-style: none !important;
+  margin: 0 !important;
+}
+
+.introjs-bullets ul li a {
+  width: 10px !important;
+  height: 10px !important;
+  background: rgba(255, 255, 255, 0.3) !important;
+  border: none !important;
+  border-radius: 50% !important;
+  display: block !important;
+  transition: all 0.3s ease !important;
+}
+
+.introjs-bullets ul li a:hover {
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+
+.introjs-bullets ul li a.active {
+  width: 28px !important;
+  border-radius: 5px !important;
+  background: linear-gradient(135deg, var(--accent-color), var(--secondary-color)) !important;
+  box-shadow: 0 0 10px var(--primary-glow) !important;
+}
+
+.introjs-arrow {
+  border: none !important;
+}
+
+.introjs-arrow.top {
+  border-bottom-color: var(--accent-color) !important;
+}
+
+.introjs-arrow.bottom {
+  border-top-color: var(--accent-color) !important;
+}
+
+.introjs-arrow.left {
+  border-right-color: var(--accent-color) !important;
+}
+
+.introjs-arrow.right {
+  border-left-color: var(--accent-color) !important;
+}
+
+.introjs-tooltip-header {
+  display: none !important;
+}
+
+.introjs-disabled {
+  opacity: 0.5 !important;
+  pointer-events: none !important;
+}
+
+
+
+.introjs-fixedTooltip {
+  position: fixed !important;
+}
+
+.introjs-showElement {
+  z-index: 999999 !important;
+}
+
+.introjs-relativePosition {
+  position: relative !important;
+}
+
+.introjs-fixParent {
+  z-index: 999999 !important;
+  position: relative !important;
+}
+
+.introjs-tooltip {
+  z-index: 99999 !important;
+}
+
+.intro-outside-tooltip {
+  position: relative !important;
+  margin-top: 20px !important; /* يدفعها شوي لتحت */
+}
+
+.introjs-tooltip::after {
+  border-color: transparent transparent rgba(0, 0, 0, 0.8) transparent !important;
+}
+
+.themes-grid {
+  overflow: visible !important;
+}
+
+
+[data-tour-step="theme-selection"] .introjs-helperLayer {
+  z-index: 1000000 !important;
+}
+
+[data-tour-step="theme-selection"] + .introjs-tooltipReferenceLayer {
+  z-index: 1000001 !important;
+}
+
+
+.intro-outside-tooltip {
+  transform: translateX(-40px) !important; /* ← عدّل القيمة حسب الحاجة */
+}
+
+/* ولو بدك تتحكم بمكان السهم */
+.intro-outside-tooltip .introjs-arrow {
+  left: 60px !important; /* حرك السهم باتجاه مركز الـ themes */
+}
+
+/* 🎯 Tooltip للـ themes (كرة القدم + الألعاب) */
+.intro-centered-tooltip.introjs-tooltip {
+  position: absolute !important;
+  right: auto !important;
+  left: 40% !important; /* حركه شوي لليمين */
+  transform: translateX(40%) translateY(10px) !important; /* قريب من الكرت */
+  top: 90% !important;
+  bottom: auto !important;
+  margin-top: 8px !important; /* مسافة صغيرة فقط */
+  z-index: 1000002 !important;
+}
+
+.intro-centered-tooltip .introjs-arrow {
+  display: block !important;
+  position: absolute !important;
+  top: -8px !important;
+  right: 40% !important;
+  transform: translateX(50%) rotate(0deg) !important;
+  border-bottom-color: var(--accent-color) !important;
+  border-width: 8px !important;
+  border-top: none !important;
+}
+
+/* 📱 تحسين في الموبايل */
+
+
+
+/* 🧭 Tooltip تبع "اختيار الثيم" */
+.intro-section-tooltip.introjs-tooltip {
+  position: absolute !important;
+  left: 80% !important; /* مائل شوي لليمين */
+  transform: translateY(15px) !important; /* قريب من الثيمز */
+  top: 90% !important;
+  bottom: auto !important;
+  margin-top: 10px !important;
+  z-index: 1000002 !important;
+}
+
+.intro-section-tooltip .introjs-arrow {
+  display: block !important;
+  position: absolute !important;
+  top: -8px !important;
+  right: 30% !important; /* سهم باتجاه يمين بسيط */
+  transform: translateX(50%) !important;
+  border-bottom-color: var(--accent-color) !important;
+  border-width: 8px !important;
+  border-top: none !important;
+}
+
+/* 📱 موبايل */
+/* 📱 تحسين موبايل نهائي */
+
+
+
+
+@media (max-width: 768px) {
+
+  /* 🔴 لو حاب تختبر */
+
+
+  /* 🎯 Tooltip عام */
+  .introjs-tooltip {
+    max-width: 90vw !important;
+    min-width: 280px !important;
+    border-radius: 12px !important;
+    padding: 1rem 1.25rem !important;
+    line-height: 1.6 !important;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(10px) !important;
+    margin: 0 !important;
+    font-size: 0.95rem !important;
+  }
+
+  .introjs-tooltip .intro-custom {
+    padding: 1.5rem !important;
+  }
+
+  .introjs-tooltip .intro-custom h3 {
+    font-size: 1.5rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .introjs-tooltip .intro-custom p {
+    font-size: 1rem !important;
+  }
+
+  .introjs-tooltipbuttons {
+    padding: 0 1.5rem 1.5rem !important;
+    gap: 0.5rem !important;
+  }
+
+  .introjs-button {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.9rem !important;
+  }
+
+  .introjs-bullets {
+    padding: 0 1.5rem 0.75rem !important;
+  }
+
+  .introjs-arrow {
+    transform: scale(0.9);
+  }
+
+  /* ⚽️🎮 themes tooltips */
+  .intro-card-tooltip.introjs-tooltip {
+    position: absolute !important;
+    top: 100% !important;
+    bottom: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(12px) !important;
+    margin: 0 !important;
+    width: 88% !important;
+    max-width: 340px !important;
+    text-align: center !important;
+  }
+
+  .intro-card-tooltip .introjs-arrow {
+    top: -8px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    border-bottom-color: var(--accent-color) !important;
+    border-width: 8px !important;
+  }
+
+  .intro-centered-tooltip.introjs-tooltip {
+    top: 100% !important;
+    bottom: auto !important;
+    margin-top: 8px !important;
+    width: 88% !important;
+    max-width: 360px !important;
+    text-align: center !important;
+  }
+
+  .intro-centered-tooltip .introjs-arrow {
+    top: -8px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    border-bottom-color: var(--accent-color) !important;
+    border-width: 8px !important;
+  }
+
+  /* 🧭 "اختر موضوعاً" tooltip */
+  .intro-section-tooltip.introjs-tooltip {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(12px) !important;
+    top: 100% !important;
+    bottom: auto !important;
+    width: 88% !important;
+    max-width: 340px !important;
+    margin: 0 !important;
+    text-align: center !important;
+    z-index: 1000002 !important;
+  }
+
+  /* ✨ السهم بالنص تمام */
+
+
+/* تكبير الخط قليلاً داخل التولتيب */
+.intro-section-tooltip .intro-custom h3 {
+  font-size: 1.4rem !important;
+  line-height: 1.4 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.intro-section-tooltip .intro-custom p {
+  font-size: 1.05rem !important;
+  line-height: 1.6 !important;
+}
+
+/* سهم بالمنتصف */
+  .intro-section-tooltip .introjs-arrow {
+    top: -8px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    border-bottom-color: var(--accent-color) !important;
+    border-width: 8px !important;
+    border-top: none !important;
+  }
+
+.intro-level-tooltip.introjs-tooltip {
+    top: 100% !important;
+    height: 100% !important;
+  
+    
+  }
+}
