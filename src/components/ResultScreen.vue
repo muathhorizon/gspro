@@ -1345,4 +1345,132 @@ onUnmounted(() => {
     font-size: 1.1rem;
   }
 }
+
+/* Special optimization for 1366x656 and below screen heights */
+@media (max-width: 1400px) and (max-height: 700px) {
+  .result-wrapper {
+    padding: 0.75rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .result-icon {
+    font-size: 2.5rem;
+  }
+
+  .result-title {
+    font-size: 1.5rem;
+  }
+
+  .result-content {
+    gap: 0.75rem;
+  }
+
+  .content-left {
+    gap: 0.5rem;
+  }
+
+  .player-photo-section {
+    padding: 0.25rem;
+  }
+
+  .photo-frame {
+    width: 100px;
+    height: 100px;
+    padding: 4px;
+  }
+
+  .entity-card {
+    padding: 0.75rem;
+    border-radius: 12px;
+  }
+
+  .entity-label {
+    font-size: 0.65rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .entity-name {
+    font-size: 1.25rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .entity-description {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .content-right {
+    gap: 0.5rem;
+  }
+
+  .section-title {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .stats-section,
+  .details-section {
+    padding: 0.75rem;
+    border-radius: 12px;
+  }
+
+  .stats-grid {
+    gap: 0.5rem;
+  }
+
+  .stat-card {
+    padding: 0.5rem;
+    gap: 0.35rem;
+    border-radius: 10px;
+  }
+
+  .stat-icon {
+    font-size: 1.65rem;
+  }
+
+  .stat-label {
+    font-size: 0.6rem;
+  }
+
+  .stat-value {
+    font-size: 1.25rem;
+  }
+
+  .details-grid {
+    gap: 0.5rem;
+  }
+
+  .detail-card {
+    padding: 0.5rem;
+    gap: 0.5rem;
+    border-radius: 10px;
+  }
+
+  .detail-icon {
+    font-size: 1.4rem;
+  }
+
+  .detail-label {
+    font-size: 0.6rem;
+  }
+
+  .detail-value {
+    font-size: 0.8rem;
+  }
+
+  .action-bar {
+    gap: 0.5rem;
+  }
+
+  .action-button {
+    padding: 0.65rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 10px;
+  }
+
+  .button-icon {
+    font-size: 0.95rem;
+  }
+}
+
 </style>

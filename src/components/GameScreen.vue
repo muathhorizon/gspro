@@ -2889,6 +2889,207 @@ function handleGiveUp() {
     font-size: 1rem;
   }
 }
+/* Special optimization for 1366x656 and below screen heights */
+@media (max-width: 1400px) and (max-height: 700px) {
+  .game-screen {
+    padding: 0.75rem 1.5rem 0.5rem;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  .game-header {
+    margin-bottom: 0.75rem;
+  }
+
+  .header-stats {
+    gap: 1rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+  }
+
+  .stat-value {
+    font-size: 0.85rem;
+  }
+
+  .give-up-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .question-area {
+    padding: 0.5rem 1rem !important;
+  }
+
+  .question-title-wrapper {
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .question-icon-ring {
+    width: 50px;
+    height: 50px;
+  }
+
+  .question-icon {
+    font-size: 1.75rem;
+  }
+
+  .questions-title {
+    font-size: 1.35rem;
+    line-height: 1.2;
+  }
+
+  .options-grid-modern {
+    gap: 0.75rem;
+    padding: 0.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+  }
+
+  .option-card-inner {
+    padding: 0.75rem 0.65rem;
+    min-height: 100px;
+    border-radius: 12px;
+  }
+
+  .option-number {
+    width: 26px;
+    height: 26px;
+    font-size: 0.85rem;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .option-text {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+
+  .option-image {
+    width: 70px;
+    height: 70px;
+    margin-top: 0.25rem;
+  }
+
+  .category-card {
+    min-height: 100px;
+    padding: 0.5rem 0.35rem;
+  }
+
+  .category-name {
+    font-size: 1rem;
+  }
+
+  .category-desc {
+    font-size: 0.8rem;
+  }
+
+  .categories-wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .chat-sidebar {
+    width: 260px;
+  }
+
+  .main-game-area.has-sidebar {
+    margin-left: 280px;
+  }
+
+  .categories-grid.has-sidebar {
+    margin-left: 280px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .sidebar-title {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .sidebar-history {
+    padding: 0.5rem;
+  }
+
+  .sidebar-item {
+    padding: 0.65rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .sidebar-question,
+  .sidebar-answer {
+    font-size: 0.8rem;
+  }
+
+  .answer-overlay {
+    padding: 0.5rem;
+  }
+
+  .answer-icon-wrapper {
+    width: 120px;
+    height: 120px;
+  }
+
+  .answer-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 3rem;
+  }
+
+  .answer-title {
+    font-size: 2rem;
+  }
+
+  .answer-text {
+    font-size: 1.25rem;
+  }
+
+  .loader-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .loader-title {
+    font-size: 1.5rem;
+  }
+
+  .orb-wrapper-large {
+    width: 120px;
+    height: 120px;
+  }
+
+  .orb-large {
+    width: 60px;
+    height: 60px;
+  }
+
+  .verification-loader {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .verification-title {
+    font-size: 1.8rem;
+  }
+
+  .verification-subtitle {
+    font-size: 1rem;
+  }
+
+  .orb-wrapper-verification {
+    width: 120px;
+    height: 120px;
+  }
+
+  .orb-verification {
+    width: 70px;
+    height: 70px;
+  }
+}
 
 
 </style>
