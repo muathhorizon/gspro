@@ -1,5 +1,5 @@
 <template>
-  <div class="letter-guess-container">
+  <div class="letter-guess-container" :class="{ 'expanded': suggestions.length > 0 }">
     <div class="letter-guess-wrapper">
       <!-- Native Input Field -->
       <div class="input-wrapper" :class="{ 'has-suggestions': suggestions.length > 0 }">
@@ -220,6 +220,17 @@ defineExpose({ clear });
     0 -20px 60px rgba(0, 0, 0, 0.3),
     0 -1px 0 rgba(255, 255, 255, 0.05);
   animation: slideUpIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  max-height: 90vh;
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: visible;
+}
+
+.letter-guess-container.expanded {
+  box-shadow:
+    0 -30px 80px rgba(0, 0, 0, 0.4),
+    0 -2px 0 rgba(139, 92, 246, 0.3),
+    0 0 100px rgba(139, 92, 246, 0.2);
+  border-top-color: rgba(139, 92, 246, 0.4);
 }
 
 @keyframes slideUpIn {
@@ -341,28 +352,58 @@ defineExpose({ clear });
     0 20px 60px rgba(0, 0, 0, 0.5),
     0 0 0 1px rgba(255, 255, 255, 0.05),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  max-height: 500px;
+  max-height: 60vh;
   overflow-y: auto;
+  overflow-x: hidden;
   z-index: 9999;
   padding: 1.5rem;
+  scroll-behavior: smooth;
 }
 
 .entity-cards-container::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 .entity-cards-container::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  margin: 8px 0;
 }
 
 .entity-cards-container::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, var(--accent-color), var(--primary-color));
-  border-radius: 10px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: all 0.3s ease;
 }
 
 .entity-cards-container::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-color);
+  background: linear-gradient(180deg, var(--primary-color), #00c9ff);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
+.entity-cards-container::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+  border-radius: 24px;
+  opacity: 0;
+  z-index: -1;
+  animation: containerGlow 3s ease-in-out infinite;
+}
+
+@keyframes containerGlow {
+  0%, 100% {
+    opacity: 0.1;
+    filter: blur(8px);
+  }
+  50% {
+    opacity: 0.3;
+    filter: blur(12px);
+  }
 }
 
 /* Cards Header */
@@ -877,6 +918,14 @@ defineExpose({ clear });
     padding: 1.5rem 1rem 2rem;
   }
 
+  .letter-guess-container.expanded {
+    padding-top: 2rem;
+    box-shadow:
+      0 -40px 100px rgba(0, 0, 0, 0.5),
+      0 -2px 0 rgba(139, 92, 246, 0.4),
+      0 0 120px rgba(139, 92, 246, 0.3);
+  }
+
   .letter-guess-wrapper {
     flex-direction: column;
     gap: 1rem;
@@ -912,14 +961,22 @@ defineExpose({ clear });
   }
 
   .entity-cards-container {
-    max-height: 400px;
+    max-height: 50vh;
     padding: 1rem;
+  }
+
+  .entity-cards-container::-webkit-scrollbar {
+    width: 6px;
   }
 }
 
 @media (max-width: 480px) {
   .letter-guess-container {
     padding: 1rem 0.75rem 1.5rem;
+  }
+
+  .letter-guess-container.expanded {
+    padding-top: 1.5rem;
   }
 
   .native-input {
@@ -950,6 +1007,16 @@ defineExpose({ clear });
 
   .cards-title {
     font-size: 1rem;
+  }
+
+  .entity-cards-container {
+    max-height: 45vh;
+    padding: 0.875rem;
+    border-radius: 20px;
+  }
+
+  .entity-cards-container::-webkit-scrollbar {
+    width: 5px;
   }
 }
 </style>
