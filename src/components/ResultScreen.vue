@@ -66,13 +66,7 @@
                 </div>
               </div>
 
-              <div class="stat-card" v-if="categoriesRemaining">
-                <div class="stat-icon">📊</div>
-                <div class="stat-info">
-                  <div class="stat-label">{{ $t('categoriesUsed') || 'Categories Used' }}</div>
-                  <div class="stat-value">{{ state.questionsAsked }}</div>
-                </div>
-              </div>
+             
             </div>
           </div>
 
@@ -624,7 +618,7 @@ onUnmounted(() => {
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   flex: 1;
 }

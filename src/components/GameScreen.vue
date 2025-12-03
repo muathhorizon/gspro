@@ -75,7 +75,6 @@
   >
     <div class="option-card-inner">
 
-      <span class="option-number">{{ index + 1 }}</span>
 
       <p class="option-text">{{ opt.text?.ar }}</p>
 
@@ -629,7 +628,7 @@ function handleGiveUp() {
 /* 🔹 عام */
 .game-screen {
   min-height: 100vh;
-  height: 100vh;
+  /* height: 100vh; */
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -848,13 +847,13 @@ function handleGiveUp() {
 }
 
 .categories-grid.has-sidebar {
-  margin-left: 350px;
+  margin-left: 175px;
   padding: 1rem 1.5rem;
 }
 
 @media (min-width: 1400px) {
   .categories-grid.has-sidebar {
-    margin-left: 370px;
+    margin-left: 175px;
     padding: 1.5rem 2rem;
   }
 }
@@ -1005,9 +1004,11 @@ function handleGiveUp() {
     min-height: 120px;
   }
 
-  .option-text {
-    font-size: 1.1rem;
-  }
+.option-text {
+  font-size: clamp(0.95rem, 2vw, 1.25rem);  /* Instead of fixed 1.1rem */
+  line-height: 1.6;  /* was 1.5 */
+  letter-spacing: 0.01em;  /* NEW */
+}
 
   .orb-wrapper-xl {
     width: 150px;
@@ -2280,7 +2281,7 @@ function handleGiveUp() {
 
 @media (min-width: 1400px) {
   .main-game-area.has-sidebar {
-    margin-left: 370px;
+    margin-left: 175px;
     padding-right: 2rem;
   }
 }
@@ -2834,10 +2835,7 @@ function handleGiveUp() {
 
 .option-card-inner {
   position: relative;
-  background: var(--card-bg);
   border: 2px solid var(--border-color);
-  border-radius: 20px;
-  padding: 1.5rem 1.25rem;
   min-height: 150px;
   display: flex;
   flex-direction: column;
@@ -2848,6 +2846,12 @@ function handleGiveUp() {
   transition: all 0.4s ease;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   box-sizing: border-box;
+
+
+   background: linear-gradient(145deg, var(--card-bg) 0%, rgba(255, 255, 255, 0.03) 100%);
+  border-radius: 24px;  /* was 20px */
+  padding: 2rem 1.5rem;  /* was 1.5rem 1.25rem */
+  backdrop-filter: blur(10px);  /* NEW */
 }
 
 @media (min-width: 1600px) {
@@ -2895,52 +2899,13 @@ function handleGiveUp() {
     inset 0 0 30px rgba(139, 92, 246, 0.1);
 }
 
-.option-number {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text-secondary);
-  background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  border: 2px solid var(--border-color);
-  border-radius: 50%;
-  transition: all 0.3s ease;
-  flex-shrink: 0;
-}
 
-@media (min-width: 1200px) {
-  .option-number {
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-    top: 1rem;
-    right: 1rem;
-  }
-}
 
-@media (max-width: 767px) {
-  .option-number {
-    width: 32px;
-    height: 32px;
-    font-size: 1rem;
-    top: 0.5rem;
-    right: 0.5rem;
-  }
-}
 
-.option-card:hover:not(.disabled) .option-number {
-  border-color: var(--accent-color);
-  transform: rotate(360deg) scale(1.1);
-}
+
+
+
+
 
 .option-text {
   font-size: 1.1rem;
@@ -3233,13 +3198,7 @@ function handleGiveUp() {
     border-radius: 14px;
   }
 
-  .option-number {
-    width: 26px;
-    height: 26px;
-    font-size: 0.85rem;
-    top: 0.5rem;
-    right: 0.5rem;
-  }
+ 
 
   .option-text {
     font-size: 0.9rem;
@@ -3370,5 +3329,170 @@ function handleGiveUp() {
   }
 }
 
+/* .categories-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  padding: 1rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+} */
+
+.categories-grid.has-sidebar {
+  padding-left: calc(350px + 1rem);
+  max-width: 100%;
+}
+
+@media (min-width: 1400px) {
+  .categories-grid.has-sidebar {
+    max-width: 1400px;
+  }
+  
+  .categories-grid.has-sidebar {
+    padding-left: calc(350px + 2rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .categories-grid.has-sidebar {
+    padding-left: 1rem;
+  }
+}
+
+/* new changes options */
+
+.options-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.25rem;
+  padding: 0.5rem;
+  perspective: 1000px;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* When sidebar is open - reduce columns to prevent overlap */
+.main-game-area.has-sidebar .options-grid-modern {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  max-width: calc(100% - 2rem);
+}
+
+/* Large Desktops (1600px+) */
+@media (min-width: 1600px) {
+  .options-grid-modern {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  /* With sidebar open, reduce to 3 columns */
+  .main-game-area.has-sidebar .options-grid-modern {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Desktop (1200px - 1599px) */
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .options-grid-modern {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+  
+  /* With sidebar open, reduce to 3 columns */
+  .main-game-area.has-sidebar .options-grid-modern {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Small Desktop / Large Laptop (1024px - 1199px) */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .options-grid-modern {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  /* With sidebar open, reduce to 2 columns */
+  .main-game-area.has-sidebar .options-grid-modern {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Laptop (900px - 1023px) */
+@media (min-width: 900px) and (max-width: 1023px) {
+  .options-grid-modern {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  /* With sidebar open, reduce to 2 columns */
+  .main-game-area.has-sidebar .options-grid-modern {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet (768px - 899px) */
+@media (min-width: 768px) and (max-width: 899px) {
+  .options-grid-modern {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  /* With sidebar open, single column */
+  .main-game-area.has-sidebar .options-grid-modern {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small Tablet / Large Phone (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  .options-grid-modern {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.875rem;
+  }
+}
+
+/* Mobile (max 479px) */
+@media (max-width: 479px) {
+  .options-grid-modern {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 0.25rem;
+  }
+}
+
+
+.question-area {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  animation: fadeInScale 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: padding 0.3s ease;
+  box-sizing: border-box;
+}
+
+.main-game-area.has-sidebar .question-area {
+  padding: 1.5rem 1.5rem;
+  margin-left: 350px;
+  width: calc(100% - 350px);
+}
+
+@media (min-width: 1200px) {
+  .question-area {
+    padding: 2rem 2rem;
+  }
+
+  .main-game-area.has-sidebar .question-area {
+    padding: 2rem 2.5rem;
+    margin-left: 350px;
+    width: calc(100% - 350px);
+  }
+}
 
 </style>

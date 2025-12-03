@@ -4030,7 +4030,7 @@ async function handleOtpSuccess() {
 }
 /* font-size */
 .stat-value{
-  font-size: 0.8rem;
+  font-size: 1.1rem;
 }
 .tooltip-title{
   font-size: 1rem;
